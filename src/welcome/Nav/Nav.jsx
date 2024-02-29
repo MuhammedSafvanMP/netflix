@@ -10,8 +10,8 @@ export default function Nav() {
           <img src="./images/language.svg" className="w-5 md:w-6 ml-3 mt-1" alt="" />
           
           <select className="px-4 md:px-8 py-2 text-white bg-black border-gray-700 rounded-md border-[1px] cursor-pointer">
-            <option value="english">English</option>
-            <option value="hindi">हिन्दी</option>
+            <option className="cursor-pointer" value="english">English</option>
+            <option className="cursor-pointer" value="hindi">हिन्दी</option>
           </select>
 
           <div className="hidden md:block bg-red-700 py-2 px-6 md:px-[12px] rounded-md">
