@@ -5,6 +5,7 @@ import Shows from '../welcome/Shows/Shows';
 import Offline from '../welcome/Offline/Offline';
 import Watch from '../welcome/Watch/Watch';
 import Kids from '../welcome/Kids/Kids';
+import Accordion from '../welcome/Accordian/Accordian';
 
 
 export default function Welcome() {
@@ -16,6 +17,7 @@ export default function Welcome() {
     <Offline />
     <Watch />
     <Kids />
+    <Accordion />
     </>
   )
 }
