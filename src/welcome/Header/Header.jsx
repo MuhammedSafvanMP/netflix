@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Header() {
   return (
-    <header className='header w-full h-[91vh] text-white bg-slate-600 flex flex-col items-center justify-center gap-4'>
+    <header className='bago w-full h-[91vh] text-white bg-slate-600 flex flex-col items-center justify-center gap-4'>
 
       <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center'>
         Unlimited movies, TV shows, and more

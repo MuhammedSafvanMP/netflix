@@ -6,6 +6,7 @@ import Offline from '../welcome/Offline/Offline';
 import Watch from '../welcome/Watch/Watch';
 import Kids from '../welcome/Kids/Kids';
 import Accordion from '../welcome/Accordian/Accordian';
+import Footer from '../welcome/Footer/Footer';
 
 
 export default function Welcome() {
@@ -18,6 +19,7 @@ export default function Welcome() {
     <Watch />
     <Kids />
     <Accordion />
+    <Footer />
     </>
   )
 }
