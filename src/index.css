@@ -6,5 +6,13 @@
 *{
   margin: 0;
   padding: 0;
-  background-color: black;
+  box-sizing: border-box;   
+}
+
+body {
+  background: #000;
+}
+header {
+  background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.6)), url(../public/images/header-image.png);
+  
 }
