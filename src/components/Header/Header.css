@@ -1,4 +1,7 @@
-header{
-    background-image: url(https://assets.teenvogue.com/photos/6436c21b4ea1fdd79f2d6c94/16:9/w_2560%2Cc_limit/StrangerThings_S3_Illustrated_Vertical_FINAL_RGB_Digital__EN.jpg);
-    object-fit: cover;
+header > img {
+
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
+    background-size: cover;
+    background-position: right;
+    opacity: 0.8;
 }
