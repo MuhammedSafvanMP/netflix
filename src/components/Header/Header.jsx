@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import axios from "axios";
-import { api_key } from "../../constant/Constant";
-import { baseURL } from "../../constant/Constant";
+import { baseURL} from "../../constant/Constant";
 import './Header.css'
 
-export default function Header() {
+export default function Header({url}) {
   const [headerMovies, setHeaderMovies] = useState([]);
   const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}`
-        );
+        const response = await axios.get(url);
         setHeaderMovies(response.data.results);
       } catch (error) {
         console.error('Error fetching data:', error.message);
@@ -29,7 +26,7 @@ export default function Header() {
       setCurrentMovieIndex(prevIndex =>
         (prevIndex + 1) % headerMovies.length
       );
-    }, 8000);
+    }, 10000);
 
     return () => clearInterval(intervalId); 
   }, [headerMovies]);
