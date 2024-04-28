@@ -34,6 +34,7 @@ export default function Movie({ title, url, isSmall }) {
   };
 
   return (
+    <>
     <section className='pt-[7rem] px-5'>
       <h2 className='text-white font-bold pb-3' style={{ fontSize: "1.5rem" }}>{title}</h2>
       <Slider {...settings}>
@@ -49,5 +50,6 @@ export default function Movie({ title, url, isSmall }) {
         ))}
       </Slider>
     </section>
+        </>
   );
 }

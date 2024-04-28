@@ -3,13 +3,10 @@ import { api_key, baseURL } from "../../constant/Constant";
 import axios from "axios";
 import Slider from "react-slick";
 
-
-
-export default function Similar({id, title}) {
+export default function Similar({ id, title }) {
   const [similar, setSimilar] = useState([]);
 
-  const similarMovies =   `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${api_key}&language=en-US&page=1`
-
+  const similarMovies = `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${api_key}&language=en-US&page=1`;
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -34,21 +31,29 @@ export default function Similar({id, title}) {
   };
 
   return (
-    <section className="pt-[7rem] px-5">
-        
-        <h2 className='text-white font-bold pb-3' style={{ fontSize: "1.5rem" }}>{title}</h2>
+    <>
+      {similar && (
+        <section className="pt-[7rem] px-5">
+          <h2
+            className="text-white font-bold pb-3"
+            style={{ fontSize: "1.5rem" }}
+          >
+            {title}
+          </h2>
 
-      <Slider {...settings}>
-        {similar?.map((movie) => (
-          <div key={movie.id} className="px-2">
-            <img
-              className={`h-[30vh] w-full rounded-lg cursor-pointer bg-zinc-300 transition-all duration-500 transform hover:scale-110`}
-              src={`${baseURL}${movie && movie.poster_path}`}
-              alt="image description"
-            />
-          </div>
-        ))}
-      </Slider>
-    </section>
+          <Slider {...settings}>
+            {similar?.map((movie) => (
+              <div key={movie.id} className="px-2">
+                <img
+                  className={`h-[30vh] w-full rounded-lg cursor-pointer bg-zinc-300 transition-all duration-500 transform hover:scale-110`}
+                  src={`${baseURL}${movie && movie.poster_path}`}
+                  alt="image description"
+                />
+              </div>
+            ))}
+          </Slider>
+        </section>
+      ) }
+    </>
   );
 }

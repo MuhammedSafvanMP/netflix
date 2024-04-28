@@ -9,3 +9,11 @@ export const HorrorMovies = `https://api.themoviedb.org/3/discover/movie?api_key
 export const ActionMovies = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=28`;
 export const RomanceMovies = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=10749`;
 export const Documentaries = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=99`;
+export  const tvshowTopRated =    `https://api.themoviedb.org/3/tv/top_rated?api_key=${api_key}&language=en-US&page=1`;
+export const tvshowOnthair =  `https://api.themoviedb.org/3/tv/on_the_air?api_key=${api_key}&language=en-US&page=1`;
+export const malayalam = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=malayalam`;
+
+
+
+
+

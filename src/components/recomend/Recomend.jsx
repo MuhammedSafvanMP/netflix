@@ -3,12 +3,9 @@ import { api_key, baseURL } from "../../constant/Constant";
 import axios from "axios";
 import Slider from "react-slick";
 
-
-
-export default function Recomend({id, title}) {
+export default function Recomend({ id, title }) {
   const [recomend, setRecomend] = useState([]);
-  const recomendMovies =   `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${api_key}&language=en-US&page=1`
-
+  const recomendMovies = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${api_key}&language=en-US&page=1`;
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -23,13 +20,6 @@ export default function Recomend({id, title}) {
     fetchMovie();
   }, [id]);
 
-
-
-
-
-
-  console.log(recomend, "oioieioi");
-
   const settings = {
     dots: true,
     infinite: true,
@@ -39,21 +29,25 @@ export default function Recomend({id, title}) {
   };
 
   return (
-    <section className="pt-[7rem] px-5">
-        
-        <h2 className='text-white font-bold pb-3' style={{ fontSize: "1.5rem" }}>{title}</h2>
-
-      <Slider {...settings}>
-        {recomend?.map((movie) => (
-          <div key={movie.id} className="px-2">
-            <img
-              className={`h-[30vh] w-full rounded-lg cursor-pointer bg-zinc-300 transition-all duration-500 transform hover:scale-110`}
-              src={`${baseURL}${movie && movie.poster_path}`}
-              alt="image description"
-            />
-          </div>
-        ))}
-      </Slider>
-    </section>
+    <>
+      {recomend ? (
+          <section className="pt-[7rem] px-5">
+      <h2 className="text-white font-bold pb-3" style={{ fontSize: "1.5rem" }}>
+        {title}
+      </h2>
+        <Slider {...settings}>
+          {recomend?.map((movie) => (
+            <div key={movie.id} className="px-2">
+              <img
+                className={`h-[30vh] w-full rounded-lg cursor-pointer bg-zinc-300 transition-all duration-500 transform hover:scale-110`}
+                src={`${baseURL}${movie && movie.poster_path}`}
+                alt="image description"
+              />
+            </div>
+          ))}
+        </Slider>
+        </section>
+    ) : null}
+    </>
   );
 }
