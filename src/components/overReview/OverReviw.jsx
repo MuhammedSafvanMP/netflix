@@ -22,6 +22,8 @@ import {
 import YouTube from "react-youtube";
 import Slider from "react-slick";
 import Recomend from "../recomend/Recomend";
+import Actores from "../actores/Actores";
+import Similar from "../similar/Similar";
 
 
 
@@ -152,12 +154,15 @@ export default function OverReview() {
       {video &&
         video?.slice(0, 10).map((videos) => (
           <div key={videos.id} className="px-36">
-            <YouTube videoId={videos.key} className="w-36 h-60  rounded-lg" />
+            <YouTube videoId={videos.key}   className="w-36 h-[30%] rounded-lg cursor-pointer" />
           </div>
         ))}
     </Slider>
 
-    <Recomend id = {id} />
+    <Similar id = {id} title = {"Similar"}  />
+    <Recomend id = {id} title = {"Recommendations"} />
+
+    <Actores id = {id}  />
     </>
   );
 }

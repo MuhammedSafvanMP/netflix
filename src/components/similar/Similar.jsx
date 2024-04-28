@@ -5,16 +5,17 @@ import Slider from "react-slick";
 
 
 
-export default function Recomend({id, title}) {
-  const [recomend, setRecomend] = useState([]);
-  const recomendMovies =   `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${api_key}&language=en-US&page=1`
+export default function Similar({id, title}) {
+  const [similar, setSimilar] = useState([]);
+
+  const similarMovies =   `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${api_key}&language=en-US&page=1`
 
 
   useEffect(() => {
     const fetchMovie = async () => {
       try {
-        const recomend = await axios.get(recomendMovies);
-        setRecomend(recomend.data.results);
+        const similar = await axios.get(similarMovies);
+        setSimilar(similar.data.results);
       } catch (error) {
         console.error("Error fetching data:", error.message);
       }
@@ -23,12 +24,6 @@ export default function Recomend({id, title}) {
     fetchMovie();
   }, [id]);
 
-
-
-
-
-
-  console.log(recomend, "oioieioi");
 
   const settings = {
     dots: true,
@@ -44,7 +39,7 @@ export default function Recomend({id, title}) {
         <h2 className='text-white font-bold pb-3' style={{ fontSize: "1.5rem" }}>{title}</h2>
 
       <Slider {...settings}>
-        {recomend?.map((movie) => (
+        {similar?.map((movie) => (
           <div key={movie.id} className="px-2">
             <img
               className={`h-[30vh] w-full rounded-lg cursor-pointer bg-zinc-300 transition-all duration-500 transform hover:scale-110`}
