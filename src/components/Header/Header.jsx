@@ -34,7 +34,7 @@ export default function Header({url}) {
   const currentMovie = headerMovies[currentMovieIndex];
 
   return (
-    <header className="text-white w-full h-[80vh] bg-no-repeat  object-cover " style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${baseURL}${currentMovie && currentMovie.poster_path})`, backgroundSize: "100% 80vh", backgroundPosition: "right top"}}>
+    <header className="text-white w-full h-[80vh] bg-no-repeat  object-cover " style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${baseURL}${currentMovie && currentMovie.poster_path})`, backgroundSize: "80% 80vh", backgroundPosition: "right top"}}>
       <Navbar />
 
       <div className="content flex w-[80%] h-[60vh] items-start justify-end px-[20px] flex-col text-white" >
