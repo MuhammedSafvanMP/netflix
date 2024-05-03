@@ -1,15 +1,13 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { baseURL } from '../../constant/Constant';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { useNavigate } from 'react-router-dom';
-// import { MovieContext } from '../../context/globalContext';
 
 export default function Movie({ title, url, isSmall }) {
   const [movies, setMovies] = useState([]);
-  // useContext(MovieContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -29,12 +27,25 @@ export default function Movie({ title, url, isSmall }) {
     dots: true,
     infinite: true,
     speed: 600,
-    slidesToShow: 10,
-    slidesToScroll: 1
+    slidesToShow: 10, // Show 4 slides on large screens
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 768, // Breakpoint for tablets
+        settings: {
+          slidesToShow: 2, // Show 2 slides on tablets
+        }
+      },
+      {
+        breakpoint: 480, // Breakpoint for mobile devices
+        settings: {
+          slidesToShow: 1, // Show 1 slide on mobile devices
+        }
+      }
+    ]
   };
 
   return (
-    <>
     <section className='pt-[7rem] px-5'>
       <h2 className='text-white font-bold pb-3' style={{ fontSize: "1.5rem" }}>{title}</h2>
       <Slider {...settings}>
@@ -50,6 +61,5 @@ export default function Movie({ title, url, isSmall }) {
         ))}
       </Slider>
     </section>
-        </>
   );
 }

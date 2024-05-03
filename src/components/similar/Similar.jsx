@@ -26,8 +26,22 @@ export default function Similar({ id, title }) {
     dots: true,
     infinite: true,
     speed: 600,
-    slidesToShow: 7,
+    slidesToShow: 10, // Show 4 slides on large screens
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 768, // Breakpoint for tablets
+        settings: {
+          slidesToShow: 2, // Show 2 slides on tablets
+        }
+      },
+      {
+        breakpoint: 480, // Breakpoint for mobile devices
+        settings: {
+          slidesToShow: 1, // Show 1 slide on mobile devices
+        }
+      }
+    ]
   };
 
   return (

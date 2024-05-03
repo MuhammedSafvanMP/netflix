@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
@@ -22,9 +23,11 @@ export default function Header() {
           type="text"
           placeholder='Email address'
         />
+        <Link to={"/home"}>
         <button className='w-full sm:w-auto px-6 py-3 bg-red-700 rounded-md'>
           Get Started
         </button>
+        </Link>
       </div>
 
     </header>

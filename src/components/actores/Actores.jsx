@@ -21,22 +21,18 @@ export default function Actores({ id }) {
     fetchActors();
   }, [id]);
 
-
-
-
   return (
-    <div className="flex text-white gap-5">
-        {actors?.slice(0, 7).map((actor) => (
-          <div key={actor.id} className="flex flex-col ">
-            <img
-              className="w-[120px] h-[120px] p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
-              src={`${baseURL}${actor.profile_path}`}
-              alt={actor.original_name}
-              />
-            <h2>{actor.original_name}</h2>
-          </div>
-        ))}
-       </div>
-      
+    <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-white">
+      {actors?.slice(0, 6).map((actor) => (
+        <div key={actor.id} className="flex flex-col items-center">
+          <img
+            className="w-24 h-24 md:w-32 md:h-32 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
+            src={`${baseURL}${actor.profile_path}`}
+            alt={actor.original_name}
+          />
+          <h2 className="text-center mt-1 text-sm md:text-base">{actor.original_name}</h2>
+        </div>
+      ))}
+    </div>
   );
 }

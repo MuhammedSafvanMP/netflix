@@ -9,8 +9,6 @@ export default function Home() {
     <>
         <Header url={Popular}  />
         <Movie  title= "Popular on Netflix" url={Popular && Popular} />
-        <Movie  title= "Tv Shows Top Rated" url={tvshowTopRated && tvshowTopRated} isSmall />
-        <Movie  title= "Tv Shows Trending" url={tvshowOnthair && tvshowOnthair} isSmall />
         <Movie  title= "Trending" url={trending && trending} isSmall />
         <Movie  title= "Originals" url={originals && originals} isSmall />
         <Movie  title= "Action Movies" url={ActionMovies && ActionMovies} isSmall />

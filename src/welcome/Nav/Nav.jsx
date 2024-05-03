@@ -1,10 +1,12 @@
 import React from "react";
+import logo from "/movieflix.png";
+
 
 export default function Nav() {
   return (
     <>
       <nav className="flex justify-between items-center p-3 w-full md:h-20 lg:h-24 xl:h-28 top-0 absolute z-20">
-        <img src="./logo.png" alt="netflix_logo" className="w-28 h-10 md:w-40 md:h-12" />
+        <img src={logo} alt="netflix_logo" className="w-28 h-10 md:w-40 md:h-12" />
 
         <ul className="flex text-center items-center gap-3">
           <img src="./images/language.svg" className="w-5 md:w-6 ml-3 mt-1" alt="" />

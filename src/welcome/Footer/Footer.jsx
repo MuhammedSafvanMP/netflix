@@ -18,7 +18,7 @@ export default function Footer() {
           <a href="#">Privacy</a>
           <a href="#">Corporate information</a>
           <a href="#">Speed Test</a>
-          <a href="#">Only on Netflix</a>
+          <a href="#">Only on Movieflix</a>
         </div>
         <div className="flex flex-col px-4 py-4">
           <a href="#">Help Center</a>
@@ -43,7 +43,7 @@ export default function Footer() {
         </li>
       </ul>
 
-      <span className="sm:pl-8">Netflix India</span>
+      <span className="sm:pl-8">Movieflix India</span>
     </footer>
   );
 }
